@@ -1,9 +1,9 @@
 <script setup>
 import { useCounter } from '~/composables/useCounter'
 
-const { data } = await useFetch('/api/count')
+// const { data } = await useFetch('/api/count')
 
-console.log(data)
+// console.log(data)
 
 const {
   state: counter,
@@ -14,8 +14,6 @@ const {
 
 <template>
   <div>
-    PV: {{ data.pv }}
-    <hr>
     Composable Counter: {{ counter }}（x 2 = {{ dbl }}）<br>
     <button @click="increment">Increment</button>
   </div>
