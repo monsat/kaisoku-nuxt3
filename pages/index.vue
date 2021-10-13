@@ -1,6 +1,5 @@
 <script setup>
 // import { useFetch } from "#app"
-import TheCounter from '@/components/TheCounter.vue'
 
 const pv = ref(0)
 // useFetch('/api/count').then(res => {

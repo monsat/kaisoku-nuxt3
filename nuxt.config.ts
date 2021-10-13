@@ -7,5 +7,5 @@ export default defineNuxtConfig({
   // serverMiddleware: [
   //   { path: '/api/count', handler: '~/server/api/count' },
   // ],
-  // components: true,
+  components: true,
 })
