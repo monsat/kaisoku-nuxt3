@@ -8,4 +8,8 @@ export default defineNuxtConfig({
   //   { path: '/api/count', handler: '~/server/api/count' },
   // ],
   components: true,
+  // linkPrefetchedClass: 'nuxt-link-prefetched',
+  router: {
+    prefetchLinks: true,
+  },
 })
