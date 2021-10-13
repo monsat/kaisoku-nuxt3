@@ -6,6 +6,14 @@
     "strict": false,
     "allowJs": true,
     "resolveJsonModule": true,
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
     "types": [
       "node"
     ]

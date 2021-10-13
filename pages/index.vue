@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { $fetch } from 'ohmyfetch'
 import { format } from 'date-fns'
 import { usePrefetched } from '@/composables/usePrefetched'
