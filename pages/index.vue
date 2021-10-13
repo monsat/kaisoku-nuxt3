@@ -6,15 +6,6 @@ usePrefetched()
 const pv = ref(0)
 pv.value = await $fetch('/api/count')
 
-// useFetch('/api/count').then(res => {
-//   pv.value = res.data
-//   console.log(res.data)
-// })
-
-// const { data } = await useFetch('/api/count')
-
-// console.log(data)
-
 </script>
 
 <template>
