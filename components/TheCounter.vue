@@ -15,7 +15,7 @@ const {
       class="py-1 px-4 rounded-lg border-4 hover:border-red-300 active:border-red-500 bg-red-500 hover:bg-red-600 active:bg-red-800 text-gray-100 active:text-white"
       @click="increment"
     >Increment</button>
-    <hr>
+    <LineDivide/>
     by Component
   </div>
 </template>

@@ -18,18 +18,18 @@ generated.value = format(new Date(renderedOn), 'yyyy-MM-dd HH:mm:SS')
 
 <template>
   <div>
-    <h1 class="text-5xl">
-      Hello Nuxt 3
+    <h1 class="pl-8 sm:pl-14 text-xl sm:text-5xl font-bold sm:font-extrabold">
+      快速 Nuxt 3
     </h1>
-    <h2 class="mb-8 text-gray-500 text-xl">
+    <h2 class="mb-4 sm:mb-8 text-gray-500 sm:text-xl font-bold">
       すばやく Nuxt 3 を理解したいエンジニアのサイト（を作成中）
     </h2>
     <client-only>
       <RenderCounter/>
     </client-only>
-    <hr>
+    <LineDivide/>
     <TheCounter />
-    <hr>
+    <LineDivide/>
     <nuxt-link
       to="study"
       class="text-blue-600 active:text-blue-800 hover:opacity-75 hover:underline"
@@ -37,3 +37,12 @@ generated.value = format(new Date(renderedOn), 'yyyy-MM-dd HH:mm:SS')
     >一覧</nuxt-link>
   </div>
 </template>
+
+<style scoped>
+h1 {
+  background-image: url('@/assets/images/nuxt-colored-logo.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+</style>
