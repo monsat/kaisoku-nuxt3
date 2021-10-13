@@ -18,13 +18,22 @@ generated.value = format(new Date(renderedOn), 'yyyy-MM-dd HH:mm:SS')
 
 <template>
   <div>
-    <h1>Hello Nuxt 3</h1>
-    PV: {{ pv }} fetched by Direct API calls using
-    <a href="https://github.com/unjs/ohmyfetch" target="_blank">$fetch</a><br>
-    サーバー側生成時刻 : {{ generated }}
+    <h1 class="text-5xl">
+      Hello Nuxt 3
+    </h1>
+    <h2 class="mb-8 text-gray-500 text-xl">
+      すばやく Nuxt 3 を理解したいエンジニアのサイト（を作成中）
+    </h2>
+    <client-only>
+      <RenderCounter/>
+    </client-only>
     <hr>
     <TheCounter />
     <hr>
-    <nuxt-link to="study" :prefetch="true">一覧</nuxt-link>
+    <nuxt-link
+      to="study"
+      class="text-blue-600 active:text-blue-800 hover:opacity-75 hover:underline"
+      :prefetch="true"
+    >一覧</nuxt-link>
   </div>
 </template>

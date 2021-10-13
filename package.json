@@ -6,7 +6,10 @@
     "start": "node .output/server"
   },
   "devDependencies": {
-    "nuxt3": "latest"
+    "autoprefixer": "^10.3.7",
+    "nuxt3": "latest",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.16"
   },
   "dependencies": {
     "date-fns": "^2.25.0"
