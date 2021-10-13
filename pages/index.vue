@@ -1,20 +1,24 @@
 <script setup>
-import { useCounter } from '~/composables/useCounter'
+// import { useFetch } from "#app"
+import TheCounter from '@/components/TheCounter.vue'
+
+const pv = ref(0)
+// useFetch('/api/count').then(res => {
+//   pv.value = res.data
+//   console.log(res.data)
+// })
 
 // const { data } = await useFetch('/api/count')
 
 // console.log(data)
 
-const {
-  state: counter,
-  dbl,
-  increment,
-} = useCounter()
 </script>
 
 <template>
   <div>
-    Composable Counter: {{ counter }}（x 2 = {{ dbl }}）<br>
-    <button @click="increment">Increment</button>
+    <h1>Hello Nuxt 3</h1>
+    PV: {{ pv }} does not work ...
+    <hr>
+    <TheCounter />
   </div>
 </template>
