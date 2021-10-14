@@ -1,7 +1,7 @@
 import type { IncomingMessage, ServerResponse } from 'http'
 import { StudyResult } from '@/types'
 
-const url = 'https://connpass.com/api/v1/event/?keyword_or=javascript+typescript&count=10'
+const url = 'https://connpass.com/api/v1/event/?keyword_or=javascript+typescript&count=3'
 let cachedResults: StudyResult | undefined
 
 const fetchEvents = async (dt: number) => {

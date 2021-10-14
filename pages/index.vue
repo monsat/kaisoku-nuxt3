@@ -24,9 +24,7 @@ generated.value = format(new Date(renderedOn), 'yyyy-MM-dd HH:mm:SS')
     <h2 class="mb-4 sm:mb-8 text-gray-500 sm:text-xl font-bold">
       すばやく Nuxt 3 を理解したいエンジニアのサイト（を作成中）
     </h2>
-    <client-only>
-      <RenderCounter/>
-    </client-only>
+    <RenderCounter/>
     <LineDivide/>
     <TheCounter />
     <LineDivide/>

@@ -31,6 +31,8 @@ export interface StudyEvent {
   waiting: number
 }
 
+export type StudyEventKeys = keyof StudyEvent
+
 export interface StudyResult {
   events: StudyEvent[]
   fetchedOn: number
