@@ -1,6 +1,6 @@
 export interface RenderCounterReturn {
   counter: number
-  renderedOn: Date
+  renderedOn: string
 }
 
 export interface StudyEvent {

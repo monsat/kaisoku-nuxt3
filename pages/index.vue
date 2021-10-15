@@ -1,19 +1,7 @@
 <script setup lang="ts">
-import { $fetch } from 'ohmyfetch'
-import { format } from 'date-fns'
 import { usePrefetched } from '@/composables/usePrefetched'
-import { RenderCounterReturn } from '@/types'
 
 usePrefetched()
-
-const pv = ref(0)
-const generated = ref('')
-const {
-  counter,
-  renderedOn,
-} = await $fetch<RenderCounterReturn>('/api/count')
-pv.value = counter
-generated.value = format(new Date(renderedOn), 'yyyy-MM-dd HH:mm:SS')
 </script>
 
 <template>
