@@ -10,14 +10,19 @@ export interface Views {
 const generated = (renderedByServer: Ref<string>) => () => renderedByServer.value.length && format(new Date(renderedByServer.value), 'yyyy-MM-dd HH:mm:SS')
 
 const fetchViews = (views: Ref<number>, renderedByServer: Ref<string>) => async () => {
-  console.log(views.value)
-  const {
-    counter,
-    renderedOn,
-  } = await $fetch<RenderCounterReturn>('/api/count')
-  console.log(counter)
-  views.value = counter
-  renderedByServer.value = renderedOn
+  const { data, refresh, pending } = await useFetch('/api/count', {})
+  // const { data } = await useAsyncData('/api/count', () => $fetch('/api/count'), {})
+  console.log(data, refresh, pending)
+  if (data.value == null) {
+    // リロード時など何故か null になる
+    await refresh()
+  }
+  if (data.value != null) {
+    // (property) Ref<Pick<unknown, never>>.value: Pick<unknown, never>
+    const { counter, renderedOn } = data.value as RenderCounterReturn
+    views.value = counter
+    renderedByServer.value = renderedOn
+  }
 }
 
 export const useViews = (): Views => {

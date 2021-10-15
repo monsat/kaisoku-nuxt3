@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Views } from '@/composables/useViews'
+import { useViews } from '@/composables/useViews'
 
-const { views, generated } = unref(useState<Views>('useViews'))
+const { views, generated } = useViews()
 </script>
 
 <template>
