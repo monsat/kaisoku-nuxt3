@@ -12,7 +12,6 @@ const generated = (renderedByServer: Ref<string>) => () => renderedByServer.valu
 const fetchViews = (views: Ref<number>, renderedByServer: Ref<string>) => async () => {
   const { data, refresh, pending } = await useFetch('/api/count', {})
   // const { data } = await useAsyncData('/api/count', () => $fetch('/api/count'), {})
-  console.log(data, refresh, pending)
   if (data.value == null) {
     // リロード時など何故か null になる
     await refresh()

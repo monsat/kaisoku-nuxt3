@@ -13,12 +13,15 @@ const fetchEvents = (fetchedOn: Ref<number | null>, events: Ref<StudyEvent[]>) =
     return
   }
 
-  const results = await useFetch('/api/study')
+  const { data, refresh } = await useFetch('/api/study')
 
-  const study = results.data as unknown as Ref<StudyResult>
+  const study = data as unknown as Ref<StudyResult>
 
   if (!study?.value) {
-    return onError()
+    await refresh()
+    if (!study?.value) {
+      return onError()
+    }
   }
 
   fetchedOn.value = study.value.fetchedOn
