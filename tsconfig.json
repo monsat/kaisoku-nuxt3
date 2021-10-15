@@ -15,7 +15,8 @@
       ]
     },
     "types": [
-      "node"
+      "node",
+      "nuxt-windicss"
     ]
   }
 }
