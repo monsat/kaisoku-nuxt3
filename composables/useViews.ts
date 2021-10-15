@@ -1,6 +1,11 @@
-import { Ref } from 'vue'
+import { Ref, ComputedRef } from 'vue'
 import { format } from 'date-fns'
 import { RenderCounterReturn } from '@/types'
+
+export interface Views {
+  views: Ref<number>
+  generated: ComputedRef<string>
+}
 
 const generated = (renderedByServer: Ref<string>) => () => renderedByServer.value.length && format(new Date(renderedByServer.value), 'yyyy-MM-dd HH:mm:SS')
 
@@ -15,7 +20,7 @@ const fetchViews = (views: Ref<number>, renderedByServer: Ref<string>) => async 
   renderedByServer.value = renderedOn
 }
 
-export const useViews = () => {
+export const useViews = (): Views => {
   const views = ref(0)
   const renderedByServer = ref('')
 
