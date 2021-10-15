@@ -1,12 +1,8 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
-  // server: {
-  //   port: 3333,
-  // },
-  // serverMiddleware: [
-  //   { path: '/api/count', handler: '~/server/api/count' },
-  // ],
+  css: ['~/assets/css/tailwind.css'],
+
   components: true,
   // linkPrefetchedClass: 'nuxt-link-prefetched',
   router: {

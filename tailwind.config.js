@@ -1,19 +1,27 @@
-const { colors } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./**/*.{vue,js,ts,jsx,tsx}'],
+  mode: 'jit',
+  purge: [
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        kayairo: {
-          default: '#c7b183',
-        },
-        nuxt: {
-          default: '#00DC82',
-          lighter: '#80eec0',
-        },
+    colors: {
+      ...colors,
+      kayairo: {
+        default: '#c7b183',
       },
+      nuxt: {
+        default: '#00DC82',
+        lighter: '#80eec0',
+      },
+    },
+    extend: {
     },
   },
   variants: {
