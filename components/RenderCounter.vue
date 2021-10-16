@@ -7,7 +7,7 @@ const { views, generated } = useViews()
 <template>
   <div>
     PV: {{ views }} fetched by Direct API calls using
-    <a href="https://github.com/unjs/ohmyfetch" target="_blank">$fetch</a><br>
+    `useFetch()`<br>
     サーバー側生成時刻 : {{ generated }}
   </div>
 </template>

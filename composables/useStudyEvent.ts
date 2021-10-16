@@ -18,10 +18,7 @@ const fetchEvents = (fetchedOn: Ref<number | null>, events: Ref<StudyEvent[]>) =
   const study = data as unknown as Ref<StudyResult>
 
   if (!study?.value) {
-    await refresh()
-    if (!study?.value) {
-      return onError()
-    }
+    return onError()
   }
 
   fetchedOn.value = study.value.fetchedOn
