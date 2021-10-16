@@ -12,10 +12,8 @@ const {
   <div>
     Composable Counter: {{ counter }}（x 2 = {{ dbl }}）<br>
     <button
-      class="py-1 px-4 rounded-lg border-4 hover:border-red-300 active:border-red-500 bg-red-500 hover:bg-red-600 active:bg-red-800 text-gray-100 active:text-white"
+      class="py-1 px-4 rounded-lg border-4 bg-red-500 text-gray-100 hover:(border-red-300 bg-red-600) active:(border-red-500 bg-red-800 text-white)"
       @click="increment"
     >Increment</button>
-    <LineDivide/>
-    by Component
   </div>
 </template>
