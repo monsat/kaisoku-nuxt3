@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { StudyEvent } from '@/types'
 import { format, startOfDay } from 'date-fns'
-import ja from 'date-fns/locale/ja'
+import ja from 'date-fns/locale/ja/index.js'
 
 interface Props {
   title: string
@@ -21,7 +21,7 @@ const desc = computed((maxLen = 64) => {
 })
 
 const isPast = computed(() => startOfDay(new Date) > new Date(props.ended_at))
-const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm')}〜${format(new Date(props.ended_at), 'HH:mm')}`)
+const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', { locale: ja })}〜${format(new Date(props.ended_at), 'HH:mm', { locale: ja })}`)
 </script>
 
 <template>
