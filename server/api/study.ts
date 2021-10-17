@@ -10,8 +10,7 @@ const fetchEvents = async (dt: number) => {
   if (cachedResults?.fetchedOn && dt < cachedResults.fetchedOn + interval) {
     return cachedResults
   }
-  const monthQuery = [new Date('2021-10-17T00:49:00.000Z'), new Date('2021-11-17T00:49:00.000Z'), new Date('2021-12-17T00:49:00.000Z')].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
-  // const monthQuery = [addMonths(dt, 0), addMonths(dt, 1), addMonths(dt, 2)].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
+  const monthQuery = [addMonths(dt, 0), addMonths(dt, 1), addMonths(dt, 2)].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
   const events: StudyResult['events'] = await fetch(`${url}${monthQuery}`)
     .then(res => res.json())
     .then(results => (results.events as StudyResult['events']).reverse())
