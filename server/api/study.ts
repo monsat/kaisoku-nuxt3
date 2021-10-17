@@ -10,7 +10,7 @@ const fetchEvents = async (dt: number) => {
   if (cachedResults?.fetchedOn && dt < cachedResults.fetchedOn + interval) {
     return cachedResults
   }
-  const monthQuery = [addMonths(dt, 1), addMonths(dt, 2)].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
+  const monthQuery = [addMonths(dt, 0), addMonths(dt, 1)].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
   // const monthQuery = [addMonths(dt, 0), addMonths(dt, 1), addMonths(dt, 2)].map(d => `ym=${format(d, 'yyyyMM')}`).join('&')
   const events: StudyResult['events'] = await fetch(`${url}${monthQuery}`)
     .then(res => res.json())
