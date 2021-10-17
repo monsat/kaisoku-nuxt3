@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { StudyEvent } from '@/types'
+import format from 'date-fns/format'
+import ja from 'date-fns/locale/ja/index.js'
 
 interface Props {
-  startJp: StudyEvent['startJp']
+  started_at: StudyEvent['started_at']
 }
 
 const props = defineProps<Props>()
+const dateStart: Date = new Date(props.started_at)
 
-const { mm, dd, dayJp } = props.startJp
+const mm = computed(() => format(dateStart, 'MM月', { locale: ja }))
+const dd = computed(() => format(dateStart, 'dd', { locale: ja }))
+const dayJp = computed(() => format(dateStart, '（E）', {locale: ja}))
 </script>
 
 <template>

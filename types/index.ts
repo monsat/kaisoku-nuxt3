@@ -29,14 +29,6 @@ export interface StudyEvent {
   title: string
   updated_at: string
   waiting: number
-  // added
-  startJp: {
-    yyyy: string
-    mm: string
-    dd: string
-    dayJp: string
-  }
-  startEnd: string
 }
 
 export type StudyEventKeys = keyof StudyEvent

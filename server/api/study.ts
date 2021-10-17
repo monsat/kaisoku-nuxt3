@@ -15,17 +15,6 @@ const fetchEvents = async (dt: number) => {
   const events: StudyResult['events'] = await fetch(`${url}${monthQuery}`)
     .then(res => res.json())
     .then(results => (results.events as StudyResult['events']).reverse())
-    .then(_events => _events.map(e => {
-      const dateStart: Date = new Date(e.started_at)
-      const startJp = {
-        yyyy: format(dateStart, 'yyyy年', { locale: ja }),
-        mm: format(dateStart, 'MM月', { locale: ja }),
-        dd: format(dateStart, 'dd', { locale: ja }),
-        dayJp: format(dateStart, '（E）', { locale: ja }),
-      }
-      const startEnd = `${format(new Date(e.started_at), 'HH:mm', { locale: ja })}〜${format(new Date(e.ended_at), 'HH:mm', { locale: ja })}`
-      return { ...e, startJp, startEnd }
-    }))
     .catch(err => { throw new Error(err.message) })
   const fetchedOn = (new Date).getTime()
   cachedResults = { events, fetchedOn }
