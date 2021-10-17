@@ -37,6 +37,19 @@ usePrefetched()
     <LineDivide/>
     <AboutNuxt/>
     <LineDivide/>
+    <div>
+      <TheH2 icon="📆">
+        勉強会カレンダー
+      </TheH2>
+      <p>
+        <BaseLink href="https://connpass.com/">connpass API</BaseLink>
+        を使用し JavaScript と TypeScript の勉強会情報を取得しています。
+      </p>
+      <FeatureCard class="my-4 text-center" @click="$router.push('study')">
+        勉強会カレンダーのページを表示
+      </FeatureCard>
+    </div>
+    <LineDivide/>
     <RenderCounter/>
     <LineDivide/>
     <TheCounter />
