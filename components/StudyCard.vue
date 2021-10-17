@@ -11,8 +11,9 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+  <section>
+    <h3 class="sm:text-xl text-nuxt-header font-bold"><BaseIcon>👩‍💻</BaseIcon> 勉強会一覧［JavaScript OR TypeScript］</h3>
+    <div class="mx-auto py-4">
       <div class="flex flex-wrap -m-4">
         <StudyCardItem
           v-for="(event, i) in props.events"
