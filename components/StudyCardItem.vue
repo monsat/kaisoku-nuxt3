@@ -11,6 +11,8 @@ interface Props {
   ended_at: string
   description: string
   hash_tag: string
+  startJp: StudyEvent['startJp']
+  startEnd: StudyEvent['startEnd']
 }
 
 const props = defineProps<Props>()
@@ -21,7 +23,6 @@ const desc = computed((maxLen = 64) => {
 })
 
 const isPast = computed(() => startOfDay(new Date) > new Date(props.ended_at))
-const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', { locale: ja })}〜${format(new Date(props.ended_at), 'HH:mm', { locale: ja })}`)
 </script>
 
 <template>
@@ -32,9 +33,7 @@ const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', {
     <div class="h-full p-4 rounded-xl bg-white shadow">
       <div class="bg-opacity-75 pb-4 overflow-hidden relative">
         <div class="md:flex">
-          <client-only>
-            <StudyCardItemDate :started_at="props.started_at" />
-          </client-only>
+          <StudyCardItemDate :startJp="props.startJp" />
           <h1 class="flex-initial title-font text-xl font-medium text-gray-900 mb-3">
             {{ props.title }}
           </h1>
@@ -45,7 +44,7 @@ const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', {
             {{ desc }}
           </p>
           <p>
-            <client-only>{{ startEnd }}</client-only>
+            {{ props.startEnd }}
           </p>
           <p class="text-right">
             <a
