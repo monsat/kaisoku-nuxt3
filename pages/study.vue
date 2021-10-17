@@ -34,6 +34,15 @@ await fetchEvents(onError)
           API 取得日時 :
           <client-only>{{ fetched }}</client-only>
         </p>
+        <BaseInfo class="my-8">
+          <template #head>
+            後日修正
+          </template>
+          <ul class="list-disc list-inside">
+            <li>直接このページにアクセスするとデータ取得がうまくいかない</li>
+            <li>一回目の取得時に <BaseCode :quote="false">null</BaseCode> のまま画面描画が行われるので <BaseCode>refresh()</BaseCode> して回避している</li>
+          </ul>
+        </BaseInfo>
       </div>
       <LineDivide/>
       <StudyCard :events="events" />
