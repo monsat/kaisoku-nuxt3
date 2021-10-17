@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  quote: boolean
+  quote?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -11,7 +11,7 @@ const { quote } = props
 
 <template>
   <span
-    class="p-1 bg-gray-700 text-sky-300 font-mono"
+    class="base-style p-1 bg-gray-700 text-sky-300 font-mono"
     :class="{ quote }"
   >
     <slot/>
@@ -19,8 +19,12 @@ const { quote } = props
 </template>
 
 <style scoped>
+.base-style {
+  font-size: 90%;
+  white-space: nowrap;
+}
 .quote::before,
 .quote::after {
-  content: '`'
+  content: '`';
 }
 </style>

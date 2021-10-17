@@ -2,13 +2,7 @@
   <footer>
     <div>
       <slot>
-        <nuxt-link
-          to="/"
-          class="text-sky-600 active:text-sky-800 hover:(opacity-75 underline)"
-          :prefetch="true"
-        >
-          TOPページ
-        </nuxt-link>
+        <BaseNuxtLink/>
       </slot>
     </div>
     <div class="text-center">

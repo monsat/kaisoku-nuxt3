@@ -3,7 +3,7 @@
     <div class="container mx-auto min-h-full box-border p-8 rounded-lg bg-gray-100 text-gray-700">
       <TheHeader/>
       <slot />
-      <TheFooter/>
+      <TheFooter v-if="$route.path !== '/'" />
     </div>
   </div>
 </template>

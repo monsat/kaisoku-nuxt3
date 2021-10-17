@@ -1,4 +1,5 @@
-<script setup lang="ts">
+<script setup lang="ts">import { useSlots } from 'vue';
+
 interface Props {
   href: string
 }
@@ -13,6 +14,6 @@ const { href } = props
     target="_blank"
     class="text-sky-600 hover:(bg-nuxt-lighter text-sky-800)"
   >
-    <slot/>
+    <slot>{{ href }}</slot>
   </a>
 </template>

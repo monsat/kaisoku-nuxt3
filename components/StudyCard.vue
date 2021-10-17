@@ -12,7 +12,7 @@ const props = defineProps<Props>()
 
 <template>
   <section>
-    <h3 class="sm:text-xl text-nuxt-header font-bold"><BaseIcon>👩‍💻</BaseIcon> 勉強会一覧［JavaScript OR TypeScript］</h3>
+    <h2 class="sm:text-xl text-nuxt-header font-bold"><BaseIcon>👩‍💻</BaseIcon> 勉強会一覧［JavaScript OR TypeScript］</h2>
     <div class="mx-auto py-4">
       <div class="flex flex-wrap -m-4">
         <StudyCardItem
