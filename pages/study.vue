@@ -19,7 +19,7 @@ await fetchEvents(onError)
 
 <template>
   <div>
-    <div v-if="events">
+    <div v-if="events.length > 0">
       <div>{{ fetched }}</div>
       <LineDivide/>
       <StudyCard :events="events" />
