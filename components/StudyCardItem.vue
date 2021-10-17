@@ -30,7 +30,7 @@ const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', {
     class="p-4 md:w-1/2 lg:w-1/3"
   >
     <div class="h-full p-4 rounded-xl bg-white shadow">
-      <div class="bg-opacity-75 pb-4 rounded-lg overflow-hidden relative">
+      <div class="bg-opacity-75 pb-4 overflow-hidden relative">
         <div class="md:flex">
           <StudyCardItemDate :started_at="props.started_at" />
           <h1 class="flex-initial title-font text-xl font-medium text-gray-900 mb-3">
