@@ -7,7 +7,7 @@ export interface Prefetched {
 const prefetched = ref<Prefetched[]>([])
 export const pushPrefetched = (prefetchedPages: Ref<Prefetched[]>) => (page: string) => {
   if (!prefetched.value.some(p => p.url === page)) {
-    // console.log(page, ':', prefetched.value.map(p => p.url).join(' & '))
+    console.log(page, ':', prefetched.value.map(p => p.url).join(' & '))
     prefetched.value.push({ url: page })
   }
 }
