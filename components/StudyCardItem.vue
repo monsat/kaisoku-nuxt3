@@ -16,9 +16,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const desc = computed((maxLen = 64) => {
-  const div = document.createElement('div')
-  div.innerHTML = `${props.description}`
-  const result = div.innerText.slice(0, maxLen + 1)
+  const result = `${props.description}`.replace(/(<([^>]+)>)/gi, '').slice(0, maxLen + 1)
   return result.length > maxLen ? `${result.slice(0, maxLen)}…` : result
 })
 
