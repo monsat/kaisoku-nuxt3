@@ -1,11 +1,12 @@
 import { Ref } from "vue"
 import { StudyEvent, StudyResult } from '@/types'
 import { format } from 'date-fns'
+import ja from 'date-fns/locale/ja/index.js'
 
 const events = ref<StudyEvent[]>([])
 const fetchedOn = ref<number | null>(null)
 
-const fetched = (fetchedOn: Ref<number | null>) => () => fetchedOn.value && format(fetchedOn.value, 'yyyy-MM-dd HH:mm:SS')
+const fetched = (fetchedOn: Ref<number | null>) => () => fetchedOn.value && format(fetchedOn.value, 'yyyy-MM-dd HH:mm:SS', { locale: ja })
 
 const fetchEvents = (fetchedOn: Ref<number | null>, events: Ref<StudyEvent[]>) => async (onError: () => {}) => {
   if (fetchedOn.value) {
@@ -18,7 +19,7 @@ const fetchEvents = (fetchedOn: Ref<number | null>, events: Ref<StudyEvent[]>) =
   const study = data as unknown as Ref<StudyResult>
 
   if (!study?.value) {
-    // await refresh()
+    await refresh()
     if (!study?.value) {
       return onError()
     }

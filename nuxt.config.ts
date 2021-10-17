@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     analyze: true
   },
 
+  components: true,
   // linkPrefetchedClass: 'nuxt-link-prefetched',
   router: {
     prefetchLinks: true,
