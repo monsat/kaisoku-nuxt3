@@ -6,3 +6,6 @@ nuxt.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Sample Output HTML
+x_output_html
