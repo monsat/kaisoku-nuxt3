@@ -3,7 +3,7 @@ import { StudyEvent } from '@/types'
 import StudyCardItem from '@/components/StudyCardItem.vue'
 
 interface Props {
-  events: StudyEvent[]
+  events: Readonly<StudyEvent[]>
 }
 
 const props = defineProps<Props>()
