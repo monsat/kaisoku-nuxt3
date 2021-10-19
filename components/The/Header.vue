@@ -1,11 +1,11 @@
 <template>
   <div>
     <nuxt-link to="/">
-      <h1 class="pl-8 sm:pl-14 text-xl sm:text-5xl font-bold sm:font-extrabold">
+      <h1 class="pl-8 text-xl font-bold sm:(pl-14 text-5xl font-extrabold)">
         快速 Nuxt 3
       </h1>
     </nuxt-link>
-    <h2 class="mb-4 sm:mb-16 text-gray-500 sm:text-xl font-bold">
+    <h2 class="mb-4 text-gray-500 font-bold sm:(mb-16 text-xl)">
       すばやく<a href="https://v3.nuxtjs.org/" target="_blank" class="px-2 hover:(bg-nuxt-lighter text-sky-800 cursor-pointer)">Nuxt 3</a>を理解したいエンジニアのサイト（を作成中）
     </h2>
   </div>
