@@ -14,7 +14,7 @@ export interface StudyEvent {
   event_url: string
   hash_tag: string
   lat: string
-  limit: number
+  limit: number | null
   lon: string
   owner_display_name: string
   owner_id: number

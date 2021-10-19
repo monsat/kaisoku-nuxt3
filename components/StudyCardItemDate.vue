@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { StudyEvent } from '@/types'
-import format from 'date-fns/format'
+import { format } from 'date-fns'
 import ja from 'date-fns/locale/ja/index.js'
 
 interface Props {

@@ -5,15 +5,14 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const { href } = props
 </script>
 
 <template>
   <a
-    :href="href"
+    :href="props.href"
     target="_blank"
     class="text-sky-600 hover:(bg-nuxt-lighter text-sky-800)"
   >
-    <slot>{{ href }}</slot>
+    <slot>{{ props.href }}</slot>
   </a>
 </template>

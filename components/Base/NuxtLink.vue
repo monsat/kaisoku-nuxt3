@@ -6,12 +6,11 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   to: '/'
 })
-const { to } = props
 </script>
 
 <template>
   <NuxtLink
-    :to="to"
+    :to="props.to"
     class="text-nuxt-dark active:text-nuxt-dark hover:(opacity-75 underline)"
   >
     <slot>快速 Nuxt 3 の TOPページ</slot>
