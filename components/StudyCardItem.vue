@@ -43,8 +43,10 @@ const moveTo = () => {
           </h1>
         </div>
         <div>
-          <p class="leading-relaxed">
+          <p class="font-bold">
             {{ props.catch }}<br>
+          </p>
+          <p class="leading-relaxed">
             {{ $stripTags(props.description) }}
           </p>
           <p class="text-right">
