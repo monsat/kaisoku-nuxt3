@@ -4,22 +4,17 @@ import { format, startOfDay } from 'date-fns'
 import ja from 'date-fns/locale/ja/index.js'
 
 interface Props {
-  title: string
-  catch: string
-  event_url: string
-  started_at: string
-  ended_at: string
-  description: string
-  limit: number
-  accepted: number
+  title: StudyEvent['title']
+  catch: StudyEvent['catch']
+  event_url: StudyEvent['event_url']
+  started_at: StudyEvent['started_at']
+  ended_at: StudyEvent['ended_at']
+  description: StudyEvent['description']
+  limit: StudyEvent['limit']
+  accepted: StudyEvent['accepted']
 }
 
 const props = defineProps<Props>()
-
-const desc = computed((maxLen = 64) => {
-  const result = `${props.description}`.replace(/(<([^>]+)>)/gi, '').slice(0, maxLen + 1)
-  return result.length > maxLen ? `${result.slice(0, maxLen)}…` : result
-})
 
 const isPast = computed(() => startOfDay(new Date) > new Date(props.ended_at))
 const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', { locale: ja })}〜${format(new Date(props.ended_at), 'HH:mm', { locale: ja })}`)
@@ -50,7 +45,7 @@ const moveTo = () => {
         <div>
           <p class="leading-relaxed">
             {{ props.catch }}<br>
-            {{ desc }}
+            {{ $stripTags(props.description) }}
           </p>
           <p class="text-right">
             <BaseIcon>🧑‍💻</BaseIcon>
