@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { usePrefetched } from '@/composables/usePrefetched'
 import { useStudyEvent } from '@/composables/useStudyEvent'
+import { useOgpImage } from '@/composables/useOgpImage'
 
 const router = useRouter()
 
@@ -14,10 +15,18 @@ const {
 
 const onError = () => router.push('/')
 await fetchEvents(onError)
+
+const title = 'Nuxt 3 の useFetch で connpass の勉強会情報を取得する'
+const { url: ogpImageUrl } = useOgpImage(title)
 </script>
 
 <template>
   <div>
+    <Head>
+      <Title>{{ title }} - {{ $config.site.name }}</Title>
+      <Meta hid="og:title" property="og:title" :content="title" />
+      <Meta hid="og:image" property="og:image" :content="ogpImageUrl" />
+    </Head>
     <div v-if="events.length > 0">
       <div>
         <TheH1 icon="📆">

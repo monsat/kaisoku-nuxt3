@@ -1,4 +1,7 @@
 export interface PublicRuntimeConfig {
+  site: {
+    name: string
+  },
   develop: {
     url: string
   },

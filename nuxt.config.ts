@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   components: true,
 
   publicRuntimeConfig: {
+    site: {
+      name: '快速 Nuxt 3',
+    },
     develop: {
       url: `http://localhost:${ process.env.PORT || 3000 }`,
     },
