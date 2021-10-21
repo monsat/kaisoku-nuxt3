@@ -11,8 +11,7 @@ useMeta({
     { hid: 'og:type', property: 'og:type', content: 'website' },
     { hid: 'og:url', property: 'og:url', content: 'https://kaisoku-nuxt3.netlify.app/' },
     { hid: 'og:title', property: 'og:title', content: '快速 Nuxt 3' },
-    { hid: 'og:description', property: 'og:description', content: '共通ディスクリプション' },
-    { hid: 'og:image', property: 'og:image', content: 'http://localhost:3333/api/ogp/' }, // @TODO: 変更
+    { hid: 'og:description', property: 'og:description', content: 'すばやく Nuxt 3 を理解したいエンジニアのサイトです' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })

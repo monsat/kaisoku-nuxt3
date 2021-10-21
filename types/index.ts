@@ -1,3 +1,12 @@
+export interface PublicRuntimeConfig {
+  develop: {
+    url: string
+  },
+  production: {
+    url: string
+  }
+}
+
 export interface RenderCounterReturn {
   counter: number
   renderedOn: string
