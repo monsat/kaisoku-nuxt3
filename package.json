@@ -7,9 +7,10 @@
   },
   "devDependencies": {
     "nuxt-windicss": "^2.0.0",
-    "nuxt3": "latest"
+    "nuxt3": "^3.0.0-27245975.d1214c9"
   },
   "dependencies": {
+    "canvas": "^2.8.0",
     "date-fns": "^2.25.0"
   }
 }
