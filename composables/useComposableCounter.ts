@@ -3,7 +3,7 @@ import { Ref } from "vue"
 const dbl = (state: Ref<number>) => () => state.value * 2
 const increment = (state: Ref<number>) => () => state.value++
 
-export const useCounter = () => {
+export const useComposableCounter = () => {
   const state = ref(0)
 
   return {

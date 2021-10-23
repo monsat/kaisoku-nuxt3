@@ -1,11 +1,9 @@
 <script setup>
-import { useCounter } from '@/composables/useCounter'
-
 const {
   state: counter,
   dbl,
   increment,
-} = useCounter()
+} = useComposableCounter()
 </script>
 
 <template>
