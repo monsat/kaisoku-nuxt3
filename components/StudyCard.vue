@@ -1,24 +1,35 @@
 <script setup lang="ts">
+import { Ref } from 'vue'
 import { StudyEvent } from '@/types'
-import StudyCardItem from '@/components/StudyCardItem.vue'
 
-interface Props {
-  events: Readonly<StudyEvent[]>
+interface StudyReturn {
+  events: StudyEvent[]
 }
 
-const props = defineProps<Props>()
+const router = useRouter()
+const { fetchEvents } = useStudyEvent()
 
+const onError = () => router.push('/')
+const data = (await fetchEvents(onError)) as Ref<StudyReturn>
 </script>
 
 <template>
   <section>
-    <h2 class="sm:text-xl text-nuxt-header font-bold"><BaseIcon>👩‍💻</BaseIcon> 勉強会一覧［JavaScript OR TypeScript］</h2>
+    <TheH2 icon="👩‍💻"> 勉強会一覧［JavaScript OR TypeScript］</TheH2>
     <div class="mx-auto py-4">
       <div class="flex flex-wrap -m-4">
         <StudyCardItem
-          v-for="(event, i) in props.events"
-          :key="i"
-          v-bind="event"
+          v-for="event in data.events"
+          :key="event.event_id"
+          :event_id="event.event_id"
+          :title="event.title"
+          :catch="event.catch"
+          :event_url="event.event_url"
+          :started_at="event.started_at"
+          :ended_at="event.ended_at"
+          :description="event.description"
+          :limit="event.limit"
+          :accepted="event.accepted"
         />
       </div>
     </div>

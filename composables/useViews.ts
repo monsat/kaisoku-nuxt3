@@ -1,6 +1,4 @@
 import { Ref, ComputedRef } from 'vue'
-import { format } from 'date-fns'
-import ja from 'date-fns/locale/ja/index.js'
 import { RenderCounterReturn } from '@/types'
 
 export interface Views {
@@ -8,7 +6,10 @@ export interface Views {
   generated: ComputedRef<string>
 }
 
-const generated = (renderedByServer: Ref<string>) => () => renderedByServer.value.length && format(new Date(renderedByServer.value), 'yyyy-MM-dd HH:mm:SS', { locale: ja })
+const generated = (renderedByServer: Ref<string>) => () => {
+  const nuxtApp = useNuxtApp()
+  renderedByServer.value.length && nuxtApp.$format(renderedByServer.value, 'yyyy-MM-dd HH:mm:SS')
+}
 
 const fetchViews = (views: Ref<number>, renderedByServer: Ref<string>) => async () => {
   const { data, refresh, pending } = await useFetch('/api/count', {})

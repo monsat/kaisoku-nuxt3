@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { usePrefetched } from '@/composables/usePrefetched'
-import AboutNuxt from '~/components/AboutNuxt.vue';
-
 usePrefetched()
+
+const title = 'いち早く Nuxt 3 を理解するため Nuxt 3 で構築したサイトです。'
+const { url: ogpImageUrl } = useOgpImage(title)
 </script>
 
 <template>
   <div>
+    <Head>
+      <Meta hid="og:image" property="og:image" :content="ogpImageUrl" />
+    </Head>
     <TheH1> Nuxt 3 パブリック Beta リリース 🎉</TheH1>
     <p>
       2021年10月12日（火）の23:00（日本時間）に、待望の

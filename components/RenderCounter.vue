@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { useViews } from '@/composables/useViews'
-import UseFetch from './Doc/UseFetch.vue';
-import DirectApiCalls from './Doc/DirectApiCalls.vue';
-
 const { views, generated } = useViews()
 </script>
 
@@ -10,10 +6,10 @@ const { views, generated } = useViews()
   <div>
     <TheH2>サーバーサイドのカウンター</TheH2>
     <p>
-    Views Count: {{ views }} fetched by <DirectApiCalls/> using <UseFetch/>
+      Views Count: {{ views }} fetched by <DocDirectApiCalls/> using <DocUseFetch/>
     </p>
     <p>
-    サーバー側生成時刻 : {{ generated }}
+      サーバー側生成時刻 : {{ generated }}
     </p>
     <BaseInfo>
       このコードはドキュメントのコードをほとんどそのまま利用しています（WIP）

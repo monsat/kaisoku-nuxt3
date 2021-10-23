@@ -1,27 +1,18 @@
 <script setup lang="ts">
-import StudyCard from '@/components/StudyCard.vue'
-import { usePrefetched } from '@/composables/usePrefetched'
-import { useStudyEvent } from '@/composables/useStudyEvent'
-import UseFetch from '~/components/Doc/UseFetch.vue'
-import H1 from '~/components/The/H1.vue'
-
-const router = useRouter()
-
 usePrefetched()
 
-const {
-  events,
-  fetched,
-  fetchEvents,
-} = useStudyEvent()
-
-const onError = () => router.push('/')
-await fetchEvents(onError)
+const title = 'Nuxt 3 の useFetch で connpass の勉強会情報を取得する'
+const { url: ogpImageUrl } = useOgpImage(title)
 </script>
 
 <template>
   <div>
-    <div v-if="events.length > 0">
+    <Head>
+      <Title>{{ title }} - {{ $config.site.name }}</Title>
+      <Meta hid="og:title" property="og:title" :content="title" />
+      <Meta hid="og:image" property="og:image" :content="ogpImageUrl" />
+    </Head>
+    <div>
       <div>
         <TheH1 icon="📆">
           勉強会カレンダー
@@ -29,10 +20,6 @@ await fetchEvents(onError)
         <p>
           <BaseLink href="https://connpass.com/">connpass API</BaseLink>
           の勉強会情報を Nuxt 3 の <DocUseFetch> `useFetch()` </DocUseFetch> で取得しています。
-        </p>
-        <p>
-          API 取得日時 :
-          <client-only>{{ fetched }}</client-only>
         </p>
         <BaseInfo class="my-8">
           <template #head>
@@ -47,7 +34,7 @@ await fetchEvents(onError)
         </BaseInfo>
       </div>
       <LineDivide/>
-      <StudyCard :events="events" />
+      <StudyCard />
     </div>
   </div>
 </template>

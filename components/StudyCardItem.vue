@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { StudyEvent } from '@/types'
-import { format, startOfDay } from 'date-fns'
-import ja from 'date-fns/locale/ja/index.js'
+import startOfDay from 'date-fns/startOfDay'
 
 interface Props {
+  event_id: StudyEvent['event_id']
   title: StudyEvent['title']
   catch: StudyEvent['catch']
   event_url: StudyEvent['event_url']
@@ -14,10 +14,12 @@ interface Props {
   accepted: StudyEvent['accepted']
 }
 
+const nuxtApp = useNuxtApp()
+const { $format } = nuxtApp
 const props = defineProps<Props>()
 
 const isPast = computed(() => startOfDay(new Date) > new Date(props.ended_at))
-const startEnd = computed(() => `${format(new Date(props.started_at), 'HH:mm', { locale: ja })}〜${format(new Date(props.ended_at), 'HH:mm', { locale: ja })}`)
+const startEnd = computed(() => $format(props.started_at, 'HH:mm') + $format(props.ended_at, '〜HH:mm'))
 
 const moveTo = () => {
   window.open(props.event_url, '_blank')
@@ -35,9 +37,7 @@ const moveTo = () => {
     >
       <div class="bg-opacity-75 pb-4 overflow-hidden relative">
         <div class="md:flex">
-          <client-only>
-            <StudyCardItemDate :started_at="props.started_at" />
-          </client-only>
+          <StudyCardItemDate :started_at="props.started_at" />
           <h1 class="flex-initial title-font sm:text-xl font-medium mb-3">
             {{ props.title }}
           </h1>
@@ -55,7 +55,7 @@ const moveTo = () => {
           </p>
           <p class="text-right">
             <BaseIcon>⏰</BaseIcon>
-            <client-only>{{ startEnd }}</client-only>
+            {{ startEnd }}
           </p>
         </div>
       </div>

@@ -1,3 +1,19 @@
+import { Ref } from 'vue'
+
+export type MaybeRef<T> = Ref<T> | T
+
+export interface PublicRuntimeConfig {
+  site: {
+    name: string
+  },
+  develop: {
+    url: string
+  },
+  production: {
+    url: string
+  }
+}
+
 export interface RenderCounterReturn {
   counter: number
   renderedOn: string
