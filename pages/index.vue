@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { usePrefetched } from '@/composables/usePrefetched'
-import { useOgpImage } from '@/composables/useOgpImage'
-
 usePrefetched()
 
 const title = 'いち早く Nuxt 3 を理解するため Nuxt 3 で構築したサイトです。'
