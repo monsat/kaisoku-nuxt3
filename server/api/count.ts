@@ -1,10 +1,10 @@
-let counter = 0
-const renderedOn = new Date()
+let counter = -1
+const renderedOn = (new Date()).getTime()
 
 export default () => {
   counter++
-  return JSON.stringify({
+  return {
     counter,
     renderedOn,
-  })
+  }
 }

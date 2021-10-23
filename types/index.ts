@@ -14,11 +14,6 @@ export interface PublicRuntimeConfig {
   }
 }
 
-export interface RenderCounterReturn {
-  counter: number
-  renderedOn: string
-}
-
 export interface StudyEvent {
   accepted: number
   address: string
