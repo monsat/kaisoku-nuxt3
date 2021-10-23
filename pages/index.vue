@@ -1,5 +1,5 @@
 <script setup lang="ts">
-usePrefetched()
+usePrefetched().add()
 
 const title = 'いち早く Nuxt 3 を理解するため Nuxt 3 で構築したサイトです。'
 const { url: ogpImageUrl } = useOgpImage(title)

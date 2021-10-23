@@ -1,27 +1,25 @@
 import { Ref } from "vue"
+import { createSharedComposable } from '@vueuse/core'
 
 export interface Prefetched {
-  url: string
+  path: string
 }
 
-const prefetched = ref<Prefetched[]>([])
-export const pushPrefetched = (prefetchedPages: Ref<Prefetched[]>) => (page: string) => {
-  if (!prefetched.value.some(p => p.url === page)) {
-    console.log(page, ':', prefetched.value.map(p => p.url).join(' & '))
-    prefetched.value.push({ url: page })
+export const add = (prefetched: Ref<Prefetched[]>) => () => {
+  const { path } = useRoute()
+  if (!prefetched.value.some(p => p.path === path)) {
+    prefetched.value.push({ path })
+    console.log(path, ':', prefetched.value.map(p => p.path).join(' & '))
   }
 }
 
-export const usePrefetched = () => {
-  const add = pushPrefetched(prefetched)
-  
-  onMounted(() => {
-    const route = useRoute()
-    add(route.path)
-  })
+export const useSharedPrefetched = () => {
+  const prefetched = ref<Prefetched[]>([])
 
   return {
     prefetched: readonly(prefetched),
-    add,
+    add: add(prefetched),
   }
 }
+
+export const usePrefetched = createSharedComposable(useSharedPrefetched)
