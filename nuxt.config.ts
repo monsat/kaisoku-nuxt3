@@ -1,14 +1,18 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
+  build: {
+    transpile: [
+      'canvas',
+      'date-fns',
+    ],
+  },
   buildModules: [
     'nuxt-windicss',
   ],
   windicss: {
     analyze: true
   },
-
-  components: true,
 
   publicRuntimeConfig: {
     site: {
