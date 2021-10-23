@@ -6,8 +6,8 @@
     "start": "node .output/server"
   },
   "devDependencies": {
-    "nuxt-windicss": "^2.0.0",
-    "nuxt3": "^3.0.0-27245975.d1214c9"
+    "nuxt-windicss": "^2.0.4",
+    "nuxt3": "^3.0.0-27249044.7d918e1"
   },
   "dependencies": {
     "canvas": "^2.8.0",
