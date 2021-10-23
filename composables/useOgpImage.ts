@@ -1,4 +1,3 @@
-import { Ref } from 'vue'
 import { PublicRuntimeConfig } from '@/types'
 
 const url = ref('')

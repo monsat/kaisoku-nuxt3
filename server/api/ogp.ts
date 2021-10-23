@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'http'
-import * as Canvas from 'canvas'
 import { parseURL } from 'ufo'
+import * as Canvas from 'canvas'
 
 const { createCanvas, loadImage } = Canvas.default as typeof Canvas
 const style = {
