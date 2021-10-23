@@ -26,8 +26,6 @@ const { url: ogpImageUrl } = useOgpImage(title)
             後日修正
           </template>
           <ul class="list-disc list-inside">
-            <li>直接このページにアクセスするとデータ取得がうまくいかない（このページをリロードすると 500 エラーになります）</li>
-            <li>一回目の取得時に <BaseCode :quote="false">null</BaseCode> のまま画面描画が行われるので <BaseCode>refresh()</BaseCode> して回避している</li>
             <li><BaseCode>&lt;client-only&gt;</BaseCode> Component がうまくいかない</li>
             <li>一部 Hydrate に失敗する</li>
           </ul>
