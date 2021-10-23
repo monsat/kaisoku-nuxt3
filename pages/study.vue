@@ -19,7 +19,7 @@ const { url: ogpImageUrl } = useOgpImage(title)
         </TheH1>
         <p>
           <BaseLink href="https://connpass.com/">connpass API</BaseLink>
-          の勉強会情報を Nuxt 3 の <DocUseFetch> `useFetch()` </DocUseFetch> で取得しています。
+          の勉強会情報を Nuxt 3 の <DocUseFetch/> で取得しています。
         </p>
         <BaseInfo class="my-8">
           <template #head>
