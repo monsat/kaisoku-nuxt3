@@ -17,5 +17,6 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   const results = await fetchEvents((new Date).getTime())
     .catch(err => { throw new Error(err.message) })
 
+  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate')
   return results
 }
