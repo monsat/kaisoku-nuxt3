@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "cp netlify_libs/canvas_lib64/{libblkid,libmount,libuuid}.so.1 node_modules/canvas/build/Release/ && npm run build"
+  command = "cp netlify_libs/canvas_lib64/{libblkid,libmount,libuuid}.so.1 node_modules/canvas/build/Release/ && LD_PRELOAD=/var/task/node_modules/canvas/build/Release/libz.so.1 npm run build"
   functions = "netlify/functions"
   publish = "dist"
 
