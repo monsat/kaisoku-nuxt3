@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build"
+  command = "cp netlify_libs/canvas_lib64/*so.1 node_modules/canvas/build/Release/ && npm run build"
   functions = "netlify/functions"
   publish = "dist"
 
