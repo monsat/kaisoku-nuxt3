@@ -6,12 +6,13 @@
     "start": "node .output/server"
   },
   "devDependencies": {
-    "nuxt-windicss": "^2.0.5",
+    "nuxt-windicss": "^2.0.7",
     "nuxt3": "^3.0.0-27251455.110b2b2"
   },
   "dependencies": {
     "@vueuse/core": "^6.7.3",
     "canvas": "^2.8.0",
-    "date-fns": "^2.25.0"
+    "date-fns": "^2.25.0",
+    "vue-demi": "^0.11.4"
   }
 }
