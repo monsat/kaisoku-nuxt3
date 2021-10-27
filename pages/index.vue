@@ -1,5 +1,5 @@
 <script setup lang="ts">
-usePrefetched()
+usePrefetched().add()
 
 const title = 'いち早く Nuxt 3 を理解するため Nuxt 3 で構築したサイトです。'
 const { url: ogpImageUrl } = useOgpImage(title)
@@ -13,7 +13,7 @@ const { url: ogpImageUrl } = useOgpImage(title)
     <TheH1> Nuxt 3 パブリック Beta リリース 🎉</TheH1>
     <p>
       2021年10月12日（火）の23:00（日本時間）に、待望の
-      <BaseLink href="https://nuxtjs.org/announcements/nuxt3-beta/">Nuxt 3 public beta（Nuxt.js 3.0.0-beta）がリリース</BaseLink>
+      <BaseLink href="https://nuxtjs.org/announcements/nuxt3-beta/">Nuxt 3 public beta（Nuxt 3.0.0-beta）がリリース</BaseLink>
       されました。
     </p>
     <p>

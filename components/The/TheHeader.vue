@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link to="/">
-      <h1 class="pl-8 text-xl font-bold sm:(pl-14 text-5xl font-extrabold)">
+      <h1 class="pl-8 text-xl text-nuxt-dark font-bold sm:(pl-14 text-5xl font-extrabold)">
         快速 Nuxt 3
       </h1>
     </nuxt-link>

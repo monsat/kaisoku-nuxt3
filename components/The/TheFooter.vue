@@ -11,7 +11,7 @@
       <BaseLink href="https://www.coworking.tokyo.jp/">コワーキングスペース茅場町 Co-Edo</BaseLink>
     </div>
     <div class="text-right">
-      Webサイト最終更新日 : 2021-10-19
+      Webサイト最終更新日 : 2021-10-23
     </div>
   </footer>
 </template>
