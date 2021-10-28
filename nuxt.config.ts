@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     transpile: [
       'canvas',
       'date-fns',
-      '@vueuse/core',
     ],
   },
   buildModules: [
