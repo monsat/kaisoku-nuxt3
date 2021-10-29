@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "cp netlify_libs/canvas_lib64/{libblkid,libmount,libuuid,libz}.so.1 node_modules/canvas/build/Release/ && cp netlify_libs/canvas_lib64/libcairo.so.2 node_modules/canvas/build/Release/ && npm run build"
+  command = "cp libx86/* node_modules/canvas/build/Release/ && npm run build"
   functions = "netlify/functions"
   publish = "dist"
 
