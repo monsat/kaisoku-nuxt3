@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^6.7.3",
+    "canvas": "^2.8.0",
     "date-fns": "^2.25.0"
   }
 }
