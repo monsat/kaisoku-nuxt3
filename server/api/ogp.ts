@@ -54,7 +54,7 @@ const generate = async (title: string, siteName: string) => {
   const ctx = canvas.getContext('2d')
   // タイトル
   const lineWidth = style.canvas.width - (style.canvas.paddingX * 2)
-  ctx.font = style.title.font
+  // ctx.font = style.title.font
   const titleLines = splitByMeasureWidth(title, lineWidth, ctx)
   const titleHeight = titleLines.length * style.title.lineHeight
   // 背景（枠線）
@@ -66,11 +66,11 @@ const generate = async (title: string, siteName: string) => {
   // テキスト描画
   ctx.textBaseline = 'top'
   ctx.fillStyle = style.title.color
-  ctx.font = style.title.font
+  // ctx.font = style.title.font
   titleLines.map((t, i) => ctx.fillText(t, style.canvas.paddingX, style.canvas.paddingY + style.title.lineHeight * i))
   // ロゴテキスト描画
   ctx.fillStyle = style.site.color
-  ctx.font = style.site.font
+  // ctx.font = style.site.font
   const siteNameWidth = ctx.measureText(siteName).width
   const logoPosX = style.canvas.width - style.site.right - siteNameWidth
   const logoPosY = style.canvas.height - style.site.bottom - style.site.lineHeight
