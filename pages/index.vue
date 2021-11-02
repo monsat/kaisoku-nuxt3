@@ -7,9 +7,6 @@ const { url: ogpImageUrl } = useOgpImage(title)
 
 <template>
   <div>
-    <Head>
-      <Meta hid="og:image" property="og:image" :content="ogpImageUrl" />
-    </Head>
     <TheH1> Nuxt 3 パブリック Beta リリース 🎉</TheH1>
     <p>
       2021年10月12日（火）の23:00（日本時間）に、待望の

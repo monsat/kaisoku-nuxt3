@@ -10,7 +10,6 @@ const { url: ogpImageUrl } = useOgpImage(title)
     <Head>
       <Title>{{ title }} - {{ $config.site.name }}</Title>
       <Meta hid="og:title" property="og:title" :content="title" />
-      <Meta hid="og:image" property="og:image" :content="ogpImageUrl" />
     </Head>
     <div>
       <div>
