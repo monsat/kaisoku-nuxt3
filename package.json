@@ -10,8 +10,10 @@
     "nuxt3": "^3.0.0-27251455.110b2b2"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.1.2",
     "@vueuse/core": "^6.7.3",
     "canvas": "^2.8.0",
-    "date-fns": "^2.25.0"
+    "date-fns": "^2.25.0",
+    "pinia": "^2.0.2"
   }
 }

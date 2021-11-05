@@ -332,7 +332,7 @@
     error-stack-parser "^2.0.0"
     string-width "^4.2.3"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27267816.6bd7186", "@nuxt/kit@npm:@nuxt/kit-edge@latest":
+"@nuxt/kit-edge@latest", "@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27267816.6bd7186", "@nuxt/kit@npm:@nuxt/kit-edge@latest":
   version "3.0.0-27267816.6bd7186"
   resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-27267816.6bd7186.tgz#fb53ab85680c0e3a8b274df68bbdce9e84129093"
   integrity sha512-OCinQR1TBeZmgU61of/YM55JvY+3emO6D4BwfTNYe8KwqIpynYcrZJxlxAYRYZKzqfZhtqLnD1B8DJ1f2b6thQ==
@@ -356,6 +356,14 @@
     ufo "^0.7.9"
     unctx "^1.0.2"
     untyped "^0.2.11"
+
+"@nuxt/kit@latest":
+  version "0.7.0-edge"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-0.7.0-edge.tgz#37da0dda70b76f9df054708ea3c066d60689f811"
+  integrity sha512-3+azijGDlERcmhK/Gp97cn8+I++/pn/AmYcj7ceRF++6T86ohckAY0ip/+y4dLlWJ0AGnwB6x4gybG03ltEPew==
+  dependencies:
+    "@nuxt/kit-edge" latest
+    jiti "^1.12.9"
 
 "@nuxt/nitro@npm:@nuxt/nitro-edge@3.0.0-27267816.6bd7186":
   version "3.0.0-27267816.6bd7186"
@@ -489,6 +497,14 @@
     webpack-hot-middleware "^2.25.1"
     webpack-virtual-modules "^0.4.3"
     webpackbar "^5.0.0-3"
+
+"@pinia/nuxt@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.1.2.tgz#56e4a8ed0e0e21178060cc628f1ae45a844fe9a6"
+  integrity sha512-GS3+o43jSPH78ZJgxmFXgqzJudWILLTD3Kx/BNtc+MIkNIRdN0rZ1K9REXeJeKjTVfrTGldapHK7AsEhkJcpIQ==
+  dependencies:
+    "@nuxt/kit" latest
+    vue-demi "*"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -835,7 +851,7 @@
     "@vue/compiler-dom" "3.2.21"
     "@vue/shared" "3.2.21"
 
-"@vue/devtools-api@^6.0.0-beta.18":
+"@vue/devtools-api@^6.0.0-beta.18", "@vue/devtools-api@^6.0.0-beta.19":
   version "6.0.0-beta.20"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.20.tgz#b5405c9a84fb44687d05e7c4c7854b1639141106"
   integrity sha512-21u2jFOk8jbAneeGpDwZQ0W66RJa0IBDUyVl6SgKnn2cRFjLWzKj+ukXjpLhYr1KASyCe5E5U4jXwChVo0YUAw==
@@ -4021,6 +4037,14 @@ pify@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-5.0.0.tgz#1f5eca3f5e87ebec28cc6d54a0e4aaf00acc127f"
   integrity sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==
+
+pinia@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.2.tgz#51a21129251ee85a4ab57a3b0d489909ec78b6ee"
+  integrity sha512-ljN+9p9XHE8YrMBgxLbpo5rdVPj7Fri4Bl9qswz5dJPeoK6ra66YOLrGpBoCsHjAqu9jOBC3oJeErocicf51oA==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.19"
+    vue-demi "*"
 
 pkg-dir@^4.1.0:
   version "4.2.0"
