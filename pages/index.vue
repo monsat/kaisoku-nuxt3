@@ -54,6 +54,8 @@ const { url: ogpImageUrl } = useOgpImage(title)
     <LineDivide/>
     <TheCounter />
     <LineDivide/>
+    <PiniaCounter/>
+    <LineDivide/>
     <TheFooter>
       <BaseNuxtLink to="study">勉強会一覧</BaseNuxtLink>
     </TheFooter>
