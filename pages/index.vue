@@ -44,9 +44,11 @@ const title = 'いち早く Nuxt 3 を理解するため Nuxt 3 で構築した�
         <BaseLink href="https://connpass.com/">connpass API</BaseLink>
         を使用し JavaScript と TypeScript の勉強会情報を取得しています。
       </p>
-      <FeatureCard class="my-4 text-center" @click="$router.push('study')">
-        勉強会カレンダーのページを表示
-      </FeatureCard>
+      <NuxtLink to="/study">
+        <FeatureCard class="my-4 text-center">
+          勉強会カレンダーのページを表示
+        </FeatureCard>
+      </NuxtLink>
     </div>
     <LineDivide/>
     <RenderCounter/>
