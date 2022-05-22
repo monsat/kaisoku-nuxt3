@@ -19,15 +19,6 @@ const title = 'Nuxt 3 の useFetch で connpass の勉強会情報を取得す�
           <BaseLink href="https://connpass.com/">connpass API</BaseLink>
           の勉強会情報を Nuxt 3 の <DocUseFetch/> で取得しています。
         </p>
-        <BaseInfo class="my-8">
-          <template #head>
-            後日修正
-          </template>
-          <ul class="list-disc list-inside">
-            <li><BaseCode>&lt;client-only&gt;</BaseCode> Component がうまくいかない</li>
-            <li>一部 Hydrate に失敗する</li>
-          </ul>
-        </BaseInfo>
       </div>
       <LineDivide/>
       <StudyCard />

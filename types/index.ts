@@ -32,7 +32,9 @@ export interface StudyEvent {
 
 export type StudyEventKeys = keyof StudyEvent
 
-export interface StudyResult {
+export interface StudyReturn {
+  results_start: number
+  results_returned: number
+  results_available: number
   events: StudyEvent[]
-  fetchedOn: number
 }

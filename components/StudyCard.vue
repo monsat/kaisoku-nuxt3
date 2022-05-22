@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { Ref } from 'vue'
-import { StudyEvent } from '@/types'
+const { data: events, error } = await useFetch('/api/study')
 
-interface StudyReturn {
-  events: StudyEvent[]
+if (error.value) {
+  navigateTo('/')
 }
-
-const { fetchEvents } = useStudyEvent()
-
-const onError = () => navigateTo('/')
-const data = (await fetchEvents(onError)) as Ref<StudyReturn>
 </script>
 
 <template>
@@ -18,7 +12,7 @@ const data = (await fetchEvents(onError)) as Ref<StudyReturn>
     <div class="mx-auto py-4">
       <div class="flex flex-wrap -m-4">
         <StudyCardItem
-          v-for="event in data.events"
+          v-for="event in events"
           :key="event.event_id"
           :event_id="event.event_id"
           :title="event.title"
