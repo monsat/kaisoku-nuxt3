@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useMeta({
+useHead({
   htmlAttr: {
     lang: 'ja',
     prefix: 'og: http://ogp.me/ns#',
@@ -18,7 +18,7 @@ useMeta({
 </script>
 
 <template>
-  <div>
+  <NuxtLayout>
     <NuxtPage/>
-  </div>
+  </NuxtLayout>
 </template>
