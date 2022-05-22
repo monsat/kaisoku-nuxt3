@@ -6,10 +6,9 @@ interface StudyReturn {
   events: StudyEvent[]
 }
 
-const router = useRouter()
 const { fetchEvents } = useStudyEvent()
 
-const onError = () => router.push('/')
+const onError = () => navigateTo('/')
 const data = (await fetchEvents(onError)) as Ref<StudyReturn>
 </script>
 
