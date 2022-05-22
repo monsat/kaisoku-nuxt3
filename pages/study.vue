@@ -2,7 +2,6 @@
 usePrefetched().add()
 
 const title = 'Nuxt 3 の useFetch で connpass の勉強会情報を取得する'
-const { url: ogpImageUrl } = useOgpImage(title)
 </script>
 
 <template>
