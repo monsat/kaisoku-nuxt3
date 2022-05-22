@@ -1,5 +1,4 @@
-import type { IncomingMessage, ServerResponse } from 'http'
-import { StudyResult } from '@/types'
+import { StudyReturn } from '@/types'
 import { format, addMonths } from 'date-fns'
 import { ja } from 'date-fns/locale/index.js'
 
@@ -7,16 +6,16 @@ const url = 'https://connpass.com/api/v1/event/?keyword_or=javascript+typescript
 
 const fetchEvents = async (dt: number) => {
   const monthQuery = ([dt, addMonths(dt, 1), addMonths(dt, 2)]).map(d => `ym=${format(d, 'yyyyMM'), { locale: ja }}`).join('&')
-  const events: StudyResult['events'] = await (await fetch(`${url}${monthQuery}`)).json()
-    .then(results => (results.events as StudyResult['events']).reverse())
+  const events = (await fetch(`${url}${monthQuery}`)).json()
+    .then((results: StudyReturn) => results.events.reverse())
     .catch(err => { throw new Error(err.message) })
-  return { events }
+  return events
 }
 
-export default async (req: IncomingMessage, res: ServerResponse) => {
-  const results = await fetchEvents((new Date).getTime())
+export default defineEventHandler(async (event) => {
+  const events = await fetchEvents(Date.now())
     .catch(err => { throw new Error(err.message) })
 
-  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate')
-  return results
-}
+  event.res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate')
+  return events
+})

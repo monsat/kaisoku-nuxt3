@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data, error } = await useFetch('/api/study')
+const { data: events, error } = await useFetch('/api/study')
 
 if (error.value) {
   navigateTo('/')
@@ -12,7 +12,7 @@ if (error.value) {
     <div class="mx-auto py-4">
       <div class="flex flex-wrap -m-4">
         <StudyCardItem
-          v-for="event in data.events"
+          v-for="event in events"
           :key="event.event_id"
           :event_id="event.event_id"
           :title="event.title"
