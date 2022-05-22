@@ -3237,7 +3237,7 @@ nuxt-windicss@^2.0.7:
     windicss-analysis "^0.3.5"
     windicss-webpack-plugin "^1.7.2"
 
-nuxt3@^3.0.0-27251455.110b2b2:
+"nuxt@npm:nuxt3@latest":
   version "3.0.0-rc.3-27550969.a4a3cff"
   resolved "https://registry.yarnpkg.com/nuxt3/-/nuxt3-3.0.0-rc.3-27550969.a4a3cff.tgz#9faa32efdd9e24a30b602d3f2be44b544ff6ab7f"
   integrity sha512-sxwtqIaKthjiipOyUuDrUYN0x5ac+9w2ItyH8VScZcX48ocIoQ2c9PxjD6yMgq/obBw0/3GZ0KIw+bUKn+2PUg==

@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "nuxt-windicss": "^2.0.7",
-    "nuxt3": "^3.0.0-27251455.110b2b2"
+    "nuxt": "npm:nuxt3@latest"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.1.2",
