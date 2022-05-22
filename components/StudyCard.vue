@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { Ref } from 'vue'
-import { StudyEvent } from '@/types'
+const { data, error } = await useFetch('/api/study')
 
-interface StudyReturn {
-  events: StudyEvent[]
+if (error.value) {
+  navigateTo('/')
 }
-
-const { fetchEvents } = useStudyEvent()
-
-const onError = () => navigateTo('/')
-const data = (await fetchEvents(onError)) as Ref<StudyReturn>
 </script>
 
 <template>
