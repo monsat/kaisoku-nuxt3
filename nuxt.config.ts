@@ -8,6 +8,9 @@ export default defineNuxtConfig({
       '@vueuse/core',
     ],
   },
+  modules:[
+    '@nuxt/content'
+  ],
   buildModules: [
     '@vueuse/core/nuxt',
     'nuxt-windicss',
