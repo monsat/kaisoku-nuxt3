@@ -15,17 +15,6 @@
     <TheH2>
       Nuxt 3 の特徴
     </TheH2>
-    <FeatureCard class="mt-4">
-      さらに軽量に、さらに高速に、さらに手間なく（コンテンツ制作中）
-    </FeatureCard>
-    <FeatureCard class="mt-4">
-      さらに快適になった圧倒的な開発体験（コンテンツ制作中）
-    </FeatureCard>
-    <FeatureCard class="mt-4">
-      Vue 3 : Composition API ,  &lt;script setup&gt; ,  Suspense（コンテンツ制作中）
-    </FeatureCard>
-    <FeatureCard class="mt-4">
-      Nitro : 次世代レンダリングエンジン（コンテンツ制作中）
-    </FeatureCard>
+    <AboutNuxtList />
   </div>
 </template>

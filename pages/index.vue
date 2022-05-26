@@ -33,8 +33,7 @@ usePrefetched().add()
       </p>
     </BaseInfo>
     <LineDivide/>
-    <ArticleList />
-    <!-- <AboutNuxt/> -->
+    <AboutNuxt />
     <LineDivide/>
     <div>
       <TheH2 icon="📆">

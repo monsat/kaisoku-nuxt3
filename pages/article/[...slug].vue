@@ -2,7 +2,7 @@
   <main>
     <ContentDoc v-slot="{ doc }">
       <TheH1>
-          {{ doc.title }}
+        {{ doc.title }}
       </TheH1>
       <ContentRenderer :value="doc" />
     </ContentDoc>
