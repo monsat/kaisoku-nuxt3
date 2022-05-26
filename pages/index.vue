@@ -57,6 +57,7 @@ usePrefetched().add()
     <PiniaCounter/>
     <LineDivide/>
     <TheFooter>
+      <BaseNuxtLink to="about">About / </BaseNuxtLink>
       <BaseNuxtLink to="study">勉強会一覧</BaseNuxtLink>
     </TheFooter>
   </div>

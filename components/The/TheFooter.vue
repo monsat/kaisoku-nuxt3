@@ -3,6 +3,7 @@
     <div>
       <slot>
         <BaseNuxtLink/>
+        <BaseNuxtLink/>
       </slot>
     </div>
     <div class="mt-4 text-center">
