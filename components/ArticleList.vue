@@ -1,3 +1,7 @@
+<script setup>
+const contentQuery = await queryContent('article').find()
+</script>
+
 <template>
   <div>
     <TheH2>
@@ -15,12 +19,20 @@
     <TheH2>
       Nuxt 3 の特徴
     </TheH2>
-    <ContentList path="/article" v-slot="{ list }">
+    <!-- これがなぜか動かない。↓ ので、scriptでリストを集めて解決した -->
+    <!-- <ContentList path="/article" v-slot="{ list }">
       <div v-for="article in list" :key="article._path">
         <FeatureCard class="mt-4">
           {{article.title}}
         </FeatureCard>
       </div>
-    </ContentList>
+    </ContentList> -->
+    <div v-for="article in contentQuery" :key="article._path">
+      <NuxtLink :to="article._path">
+        <FeatureCard class="mt-4">
+          {{article.title}}
+        </FeatureCard>
+      </NuxtLink>
+    </div>
   </div>
 </template>
